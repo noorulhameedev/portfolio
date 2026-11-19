@@ -383,12 +383,12 @@ img {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 26px;
+    gap: 18px;
 }
 
 .nav-link {
     color: var(--text-primary);
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 500;
     position: relative;
     white-space: nowrap;
@@ -499,8 +499,12 @@ img {
 
 .hero-cta {
     display: flex;
-    gap: 20px;
+    gap: 14px;
     flex-wrap: wrap;
+}
+
+.hero-cta .btn {
+    padding: 14px 26px;
 }
 
 .hero-visual {
@@ -746,15 +750,22 @@ img {
     transform: translateY(-50%);
 }
 
-.project-contribution {
+.project-contribution,
+.project-details {
     font-size: 16px;
     line-height: 1.6;
     color: var(--text-secondary);
+}
+
+.project-details {
+    display: grid;
+    gap: 14px;
     border-left: 3px solid var(--primary-border);
     padding-left: 16px;
 }
 
-.project-contribution span {
+.project-contribution span,
+.project-details span {
     display: block;
     font-size: 15px;
     font-weight: 700;
@@ -762,6 +773,11 @@ img {
     text-transform: uppercase;
     color: var(--primary);
     margin-bottom: 4px;
+}
+
+.project-desc strong {
+    color: var(--text-primary);
+    font-weight: 600;
 }
 
 .project-links {
@@ -772,6 +788,54 @@ img {
 
 .project-links a {
     font-size: 17px;
+}
+
+/* Services Section */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--grid-gap);
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 28px;
+}
+
+.service-card:hover {
+    border-color: var(--primary-border);
+}
+
+.service-icon {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-sm);
+    background: var(--primary-soft);
+    border: 1px solid var(--primary-border);
+    color: var(--primary);
+    font-size: 20px;
+}
+
+.service-card h3 {
+    font-size: 20px;
+    line-height: 1.35;
+    color: var(--text-primary);
+}
+
+.service-card p {
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+.services-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: calc(var(--heading-gap) + 8px);
 }
 
 /* Experience & Education timeline */
@@ -1201,6 +1265,16 @@ footer {
 }
 
 /* Responsive Design */
+@media (max-width: 1100px) {
+    .nav-links {
+        gap: 14px;
+    }
+
+    .nav-link {
+        font-size: 15px;
+    }
+}
+
 @media (max-width: 1024px) {
     :root {
         --section-pad: 64px;
@@ -1448,7 +1522,8 @@ footer {
     }
 
     .skills-grid,
-    .projects-grid {
+    .projects-grid,
+    .services-grid {
         grid-template-columns: 1fr;
     }
 }
